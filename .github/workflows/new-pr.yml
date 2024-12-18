@@ -23,6 +23,7 @@ jobs:
       run: |
         echo $(URL)
         echo $URL
+        echo "a"
         
     - name: send_run_log
       continue-on-error: true
