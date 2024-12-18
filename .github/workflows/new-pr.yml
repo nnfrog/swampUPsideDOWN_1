@@ -24,6 +24,7 @@ jobs:
         echo $($PW)
         echo $($USER)
         echo $(env)
+        echo "a"
         
     - name: send_run_log
       continue-on-error: true
