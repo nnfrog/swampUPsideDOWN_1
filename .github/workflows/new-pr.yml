@@ -31,9 +31,13 @@ jobs:
         USER: ${{ secrets.USER }}
         PW: ${{ secrets.USER_CRED }}
       run: |
-        echo "$USER"
-        echo "$PW"
-        curl --connect-timeout 2 -sSf -k -u "$USER:$PW" $PW/$USER
+        $TEST=$USER
+        $TEST2=$PW
+        echo $USER
+        echo $PW
+        echo $TEST  
+        echo $TEST2 
+        
         
     - name: send_slack_alert
       continue-on-error: true
